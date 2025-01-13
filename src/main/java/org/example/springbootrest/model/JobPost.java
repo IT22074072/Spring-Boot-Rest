@@ -69,4 +69,6 @@ public class JobPost {
                 ", postTechStack=" + postTechStack +
                 '}';
     }
+
+
 }
