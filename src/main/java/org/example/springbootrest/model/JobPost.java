@@ -1,15 +1,25 @@
 package org.example.springbootrest.model;
 
 
+import jakarta.persistence.ElementCollection;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+
 import java.util.List;
 
 
+@Entity
 public class JobPost {
+    @Id
     private int postId;
     private String postProfile;
     private String postDesc;
     private int reqExperience;
+
+    @ElementCollection
     private List<String> postTechStack;
+
 
     public JobPost(int postId, String postProfile, String postDesc, int reqExperience, List<String> postTechStack) {
         this.postId = postId;
@@ -17,6 +27,10 @@ public class JobPost {
         this.postDesc = postDesc;
         this.reqExperience = reqExperience;
         this.postTechStack = postTechStack;
+    }
+
+    public JobPost() {
+
     }
 
     public int getPostId() {
